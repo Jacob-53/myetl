@@ -10,7 +10,7 @@ def converter_agg(dis_path):
         raise FileNotFoundError(f"Parquet파일이 아래 주소에 존재하지 않습니다: {parquet_file}")
     
     df = pd.read_parquet(parquet_file, engine='pyarrow')
-    group_df = df.groupby(["value"]).count().reset_index()
+    group_df = df.groupby(["name","value"]).count().reset_index()
     try:
         group_df.to_csv(agg_file, index=False)
         return f" CSV 파일이 아래 경로에 생성되었습니다: {agg_file}"
