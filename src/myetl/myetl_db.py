@@ -1,9 +1,7 @@
-import pandas as pd
-import pyarrow.parquet as pq
-import os
 
 def converter_agg(dis_path):
-    
+    import os
+    import pandas as pd
     base_path ="/home/jacob/data/"
     parquet_file = f"{base_path}{dis_path}/data.parquet"
     agg_file = f"{base_path}{dis_path}/agg.csv"
@@ -21,7 +19,8 @@ def converter_agg(dis_path):
     
 
 def converter_pq(dis_path):
-   
+    import os
+    import pandas as pd
     base_path ="/home/jacob/data/"
     csv_file = f"{base_path}{dis_path}/data.csv"
     parquet_file = f"{base_path}{dis_path}/data.parquet"
